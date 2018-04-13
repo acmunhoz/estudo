@@ -1,9 +1,10 @@
 <?php
 require("db_connect.php");
 
-$id_chamado=6558;
-$franquia="Express Pelotas"
-$data_chamado=date('Ymd');
+
+$id_chamado=$_GET['id_chamado'];
+$franquia=$_GET['franquia'];
+$data_chamado=$_GET['data_chamado'];
 
 var_dump($id_chamado);
 

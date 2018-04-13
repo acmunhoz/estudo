@@ -12,7 +12,7 @@ require("function.php");
 	<title>Registro de Chamados</title>
 </head>
 <body>
-	<form action="insertChamado()" method="get">
+	<form action="./fucntion.php" method="get">
 		Insira o número do chamado:
 		<br />
 		<input type="number" name="id_chamado">
