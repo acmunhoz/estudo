@@ -1,26 +1,27 @@
 <?php
-require("db_connect.php");
+include 'db_connect.php';
 
 
-$id_chamado=$_GET['id_chamado'];
-$franquia=$_GET['franquia'];
-$data_chamado=$_GET['data_chamado'];
+if(!empty($_GET['id_chamado']) && !empty($_GET['franquia']) && !empty($_GET['data_chamado'])):
 
-var_dump($id_chamado);
+$sql_insert="INSERT INTO chamados (id_chamado,franquia,data_chamado) VALUES (".$_GET['id_chamado'].",\"".$_GET['franquia']."\",\"".$_GET['data_chamado']."\")";
+		
 
+	if($mysqli->query($sql_insert) == True):
+		echo "Chamado #".$_GET['id_chamado']." inserido!";
+	else:
+		echo "Deu ruim";
+	endif;		
 
-function insertChamado($id_chamado,$franquia,$data_chamado){
-	if(!empty($id_chamado) && !empty($franquia) && !empty($data_chamado))	
-		$sql_insert="INSERT INTO chamados (id_chamado,franquia,data_chamado) VALUES ($id_chamado,$franquia,$data_chamado)";
-		else:
-			echo "Não foi inserido";
-	endif;
-}
+$mysqli->close();
 
+endif;
 
+/*
 function checkChamado(){
 
 	$sql_consulta="SELECT * FROM chamados";
 }
+*/
 
 ?>

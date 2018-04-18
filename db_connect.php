@@ -1,12 +1,9 @@
 <?php
-$link = mysqli_connect("127.0.0.1", "root", "and246", "base_teste");
+$mysqli = new mysqli("127.0.0.1", "root", "and246", "base_teste");
 
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
 }
 
-mysqli_close($link);
 ?>

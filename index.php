@@ -6,13 +6,13 @@ require("function.php");
 
 ?>
 
-</!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Registro de Chamados</title>
 </head>
 <body>
-	<form action="./fucntion.php" method="get">
+	<form action="./function.php" method="get">
 		Insira o número do chamado:
 		<br />
 		<input type="number" name="id_chamado">
